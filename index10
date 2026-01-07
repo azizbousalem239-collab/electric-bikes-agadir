@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كراء دراجات كهربائية في أكادير</title>
+  
+  <!-- ✅ إضافة خط Tajawal من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ تحسين SEO -->
+  <meta name="description" content="كراء دراجات كهربائية في أكادير بأسعار مناسبة مع خدمات إضافية مثل مرشد سياحي ومقاعد أطفال.">
+
+  <style>
+    body {font-family: "Tajawal", Arial, sans-serif; margin:0; background:#f9f9f9; color:#333;}
+    header {background:#0ea5e9; color:#fff; padding:1rem; text-align:center;}
+    nav a {color:#fff; margin:0 1rem; text-decoration:none;}
+    section {padding:2rem; max-width:900px; margin:auto;}
+    h1,h2 {color:#0ea5e9;}
+    .card {background:#fff; border:1px solid #ddd; border-radius:8px; padding:1rem; margin:1rem 0;}
+    .price {color:#22c55e; font-weight:bold;}
+    form input, form select, form textarea {width:100%; padding:.5rem; margin:.5rem 0; border:1px solid #ccc; border-radius:6px;}
+    form button {background:#22c55e; color:#fff; padding:.7rem 1.2rem; border:none; border-radius:6px; cursor:pointer; transition:0.3s;}
+    form button:hover {background:#16a34a;}
+    form button:active {background:#15803d;}
+    footer {background:#0f172a; color:#ccc; text-align:center; padding:1rem;}
+    .supervision {margin-top:.5rem; font-weight:bold;}
+    img {max-width:100%; border-radius:8px; margin:1rem 0;}
+
+    /* ✅ تحسين التجاوب */
+    @media (max-width: 600px) {
+      nav a {display:block; margin:.5rem 0;}
+      section {padding:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>كراء دراجات كهربائية في أكادير</h1>
+    <nav>
+      <a href="#services">الخدمات</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#booking">الحجز</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>استمتع بجولات صديقة للبيئة</h2>
+    <p>اكتشف جمال أكادير بالدراجة الكهربائية بكل راحة وأمان.</p>
+    <!-- ✅ يمكنك لاحقًا رفع صورك الخاصة داخل مجلد images -->
+    <img src="images/bike1.jpg" alt="دراجة كهربائية حديثة">
+    <img src="images/bike2.jpg" alt="دراجة كهربائية على الطريق">
+  </section>
+
+  <section id="services">
+    <h2>الخدمات</h2>
+    <div class="card">
+      <h3>كراء بالساعة</h3>
+      <p>مناسب للجولات القصيرة داخل المدينة.</p>
+      <p class="price">60 درهم / ساعة</p>
+    </div>
+    <div class="card">
+      <h3>كراء نصف يوم</h3>
+      <p>4 ساعات لاكتشاف الكورنيش والمناطق القريبة.</p>
+      <p class="price">200 درهم</p>
+    </div>
+    <div class="card">
+      <h3>كراء يوم كامل</h3>
+      <p>أفضل خيار لاستكشاف أكادير براحة.</p>
+      <p class="price">350 درهم</p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>عروض إضافية</h2>
+    <div class="card">
+      <h3>مرشد سياحي محلي</h3>
+      <p>جولة مخصّصة لأفضل الأماكن.</p>
+      <p class="price">120 درهم</p>
+    </div>
+    <div class="card">
+      <h3>مقعد أطفال</h3>
+      <p>راحة وسلامة للأطفال.</p>
+      <p class="price">40 درهم</p>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>الحجز</h2>
+    <form id="bookingForm">
+      <label>الاسم الكامل</label>
+      <input type="text" name="name" required>
+      <label>رقم الهاتف (واتساب)</label>
+      <input type="tel" name="phone" pattern="^0[6-7][0-9]{8}$" placeholder="مثال: 0678123456" required>
+      <label>تاريخ الحجز</label>
+      <input type="date" name="date" required>
+      <label>المدة</label>
+      <select name="duration" required>
+        <option value="">اختر</option>
+        <option>ساعة</option>
+        <option>4 ساعات</option>
+        <option>يوم كامل</option>
+      </select>
+      <label>ملاحظات</label>
+      <textarea name="notes"></textarea>
+      <button type="submit">إرسال عبر واتساب</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> جميع الحقوق محفوظة</p>
+    <div class="supervision">تحت إشراف: عبدالعزيز بوسالم و نور الدين إيدهْمود</div>
+    <p>📞 للتواصل: 0774180258</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const msg = `طلب حجز دراجة كهربائية:%0Aالاسم: ${data.get('name')}%0Aالهاتف: ${data.get('phone')}%0Aالتاريخ: ${data.get('date')}%0Aالمدة: ${data.get('duration')}%0Aملاحظات: ${data.get('notes')}`;
+      const phone = "0774180258"; 
+      window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
+    });
+  </script>
+</body>
+</html>
